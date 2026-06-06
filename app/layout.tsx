@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import { ServiceWorkerRegister } from './components/ServiceWorkerRegister'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   title: 'SHANKAR TEXTILE - Inventory Dashboard',
   description: 'Premium SaaS dashboard for garment inventory management system',
   generator: 'v0.app',
+  manifest: '/manifest.webmanifest',
   icons: {
     icon: [
       {
@@ -41,6 +43,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-slate-50`}>
       <body className="font-sans antialiased bg-slate-50">
         {children}
+        <ServiceWorkerRegister />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
