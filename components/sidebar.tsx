@@ -46,8 +46,8 @@ export function Sidebar({ activeItem, onNavigate, isOpen, onClose }: SidebarProp
       {/* Logo Section */}
       <div className="p-6 border-b border-slate-700">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center font-bold text-lg">
-            ST
+          <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center overflow-hidden">
+            <img src="/apple-icon.png" alt="SHANKAR logo" className="h-full w-full object-cover" />
           </div>
           <div>
             <h1 className="font-bold text-lg">SHANKAR</h1>
